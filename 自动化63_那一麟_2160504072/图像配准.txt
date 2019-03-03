@@ -1,0 +1,15 @@
+t1=imread('Image A.jpg');
+t2=imread('Image B.jpg');
+ cpselect(t2(:,:,1),t1(:,:,1));
+
+tform = cp2tform(movingPoints,fixedPoints,'affine');
+I_out = imtransform(t2,tform);
+figure
+subplot(121)
+imshow(t1);
+title('²Î¿¼Í¼Ïñ');
+subplot(122)
+imshow(I_out );
+title('Êä³öÍ¼Ïñ');
+ movingPoints
+ fixedPoints
